@@ -1,0 +1,4 @@
+{
+  "RE_SYNCHRONIZE.title": "Synchronize",
+  "RE_SYNCHRONIZE.description": "Gain {CalculationExtra:diff()} [gold]Focus[/gold] this turn for each unique Orb you have.{InCombat:\n(Gain {CalculatedFocus:diff()} [gold]Focus[/gold])|}"
+}

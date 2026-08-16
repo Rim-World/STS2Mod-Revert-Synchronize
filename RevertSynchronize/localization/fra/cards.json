@@ -1,0 +1,4 @@
+{
+  "RE_SYNCHRONIZE.title": "Synchronisation",
+  "RE_SYNCHRONIZE.description": "Gagnez {CalculationExtra:diff()} de [gold]Focalisation[/gold] jusqu'à la fin du tour pour chaque Orbe unique que vous avez.{InCombat:\n(Gagnez {CalculatedFocus:diff()} de [gold]Focalisation[/gold])|}"
+}

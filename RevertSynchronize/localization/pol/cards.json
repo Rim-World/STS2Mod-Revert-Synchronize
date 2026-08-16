@@ -1,0 +1,4 @@
+{
+  "RE_SYNCHRONIZE.title": "Synchronizacja",
+  "RE_SYNCHRONIZE.description": "W tej turze zyskaj {CalculationExtra:diff()} pkt. [gold]Skupienia[/gold] za każdy posiadany rodzaj Sfery.{InCombat:\n(Zyskaj {CalculatedFocus:diff()} pkt. [gold]Skupienia[/gold])|}"
+}

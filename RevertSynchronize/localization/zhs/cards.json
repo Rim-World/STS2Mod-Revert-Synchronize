@@ -1,0 +1,4 @@
+{
+  "RE_SYNCHRONIZE.title": "同步",
+  "RE_SYNCHRONIZE.description": "你每有一种不同的充能球，就在本回合获得{CalculationExtra:diff()}点[gold]集中[/gold]。{InCombat:\n（获得{CalculatedFocus:diff()}点[gold]集中[/gold]）|}"
+}

@@ -1,0 +1,4 @@
+{
+  "RE_SYNCHRONIZE.title": "Sinkronisasi",
+  "RE_SYNCHRONIZE.description": "Dapatkan {CalculationExtra:diff()} [gold]Fokus[/gold] giliran ini untuk setiap tipe Bola yang kamu punya.{InCombat:\n(Dapatkan {CalculatedFocus:diff()} [gold]Fokus[/gold])|}"
+}

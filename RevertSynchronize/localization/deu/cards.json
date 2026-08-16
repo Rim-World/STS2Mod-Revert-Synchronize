@@ -1,0 +1,4 @@
+{
+  "RE_SYNCHRONIZE.title": "Synchronisieren",
+  "RE_SYNCHRONIZE.description": "Erhalte für jeden unterschiedlichen Orb {CalculationExtra:diff()} [gold]Fokus[/gold] in diesem Zug.{InCombat:\n({CalculatedFocus:diff()} [gold]Fokus[/gold])|}"
+}
