@@ -1,0 +1,4 @@
+{
+  "SYNCHRONIZE.title": "同期",
+  "SYNCHRONIZE.description": "ターン終了時まで生成中のオーブ1種類につき、[gold]集中力[/gold]{CalculationExtra:diff()}を得る。{InCombat:\n([gold]集中力[/gold]{CalculatedFocus:diff()}を得る。)|}"
+}

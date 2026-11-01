@@ -1,0 +1,4 @@
+{
+  "SYNCHRONIZE.title": "Senkronize Ol",
+  "SYNCHRONIZE.description": "Sahip olduğun her eşsiz Küre için bu turluk {CalculationExtra:diff()} [gold]Odak[/gold] elde et.{InCombat:\n({CalculatedFocus:diff()} [gold]Odak[/gold] elde et)|}"
+}

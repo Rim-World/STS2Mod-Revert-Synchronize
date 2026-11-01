@@ -1,0 +1,4 @@
+{
+  "SYNCHRONIZE.title": "Sincronizar",
+  "SYNCHRONIZE.description": "Receba {CalculationExtra:diff()} de [gold]Foco[/gold] neste turno por cada tipo de Orbe que você possuir.{InCombat:\n(Receba {CalculatedFocus:diff()} de [gold]Foco[/gold])|}"
+}

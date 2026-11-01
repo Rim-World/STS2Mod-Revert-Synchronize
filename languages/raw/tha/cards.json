@@ -1,0 +1,4 @@
+{
+  "SYNCHRONIZE.title": "Synchronize",
+  "SYNCHRONIZE.description": "ได้รับ {CalculationExtra:diff()} [gold]โฟกัส[/gold]ในเทิร์นนี้ตามจำนวนลูกแก้วไม่ซ้ำธาตุที่คุณมี{InCombat:\n(ได้รับ {CalculatedFocus:diff()} [gold]โฟกัส[/gold])|}"
+}

@@ -1,55 +1,80 @@
-English | [中文](README.zh.md)
+# 回调同步（RevertSynchronize）
 
-# If you like this mod, welcome to check out my other mods. They might be helpful to you.
+《杀戮尖塔 2》mod：把故障机器人技能牌「同步」（Synchronize）整卡固定为 v0.110 效果。
 
-## 1\. Effects
+A Slay the Spire 2 mod that pins the Defect card *Synchronize* to its v0.110 effect.
 
-Adjusts the "Synchronize" card to its v0.110 effect: gain 2 Focus this turn for each unique Orb you have (1 Focus in v0.111, while the v0.107 version carries the Exhaust keyword instead).
+## 功能
 
-On upgrade: gain 3 Focus for each unique Orb you have (2 Focus in both v0.107 and v0.111).
+- 卡牌数值固定为 v0.110：基础每有一种不同充能球，本回合获得 2 点集中；升级后 3 点。
+- 卡牌元数据固定：1 费、技能牌、目标自身、罕见、无消耗。
+- 卡面文本同步为 v0.110 模板，提供 deu、eng、esp、fra、ind、ita、jpn、kor、pol、ptb、rus、spa、tha、tur、zhs、zht 共 16 种语言。
+- 直接在原卡上修改，不生成新卡牌、不禁用旧卡牌；卡图沿用原版。
+- 采用外置补丁写死的方式实现，补丁体不读取原版实现，游戏改动数值或文本不影响结果。
 
-All other effects remain unchanged: 1 cost, Skill, does not Exhaust; card text is synced to the v0.110 version, and the card art is unchanged.
+## 兼容性
 
-This mod works by modifying the original "Synchronize" card directly, rather than creating a new card and disabling the old one.
+- 不依赖任何基础 mod，`dependencies` 为空。
+- 支持 default 0.107.x 与 public beta 0.111.0 及以上版本。
+- 在 v0.110.x 上自动停用：该版本的「同步」本就是目标效果，mod 不做任何干预。
+- 启动时检查游戏版本，并检查游戏包体中是否存在「同步」及其结构；版本不支持或卡牌被移除、形状不符时自动禁用补丁，游戏保持原版行为，不崩溃。
+- 不保证与盗版、修改版、移动版、老旧版本、冷门 mod 或次级 mod 的兼容性。
 
-## 2\. Impact (Based on My Understanding of the Game)
+## 安装
 
-The v0.110 version of Synchronize is significantly stronger than all other versions and can become one of the core cards of the Defect class.
+1. 把 `RevertSynchronize.dll`、`RevertSynchronize.pck`、`RevertSynchronize.json` 放入游戏的 mods 目录下的 `RevertSynchronize` 子目录：
+   `C:\Game\Steam\steamapps\common\Slay the Spire 2\mods\RevertSynchronize\`。
+2. 启动游戏。启动日志中出现 `RevertSynchronize: Harmony patches applied ...` 表示补丁已生效。
 
-This mod affects save files: while the mod is enabled, "Synchronize" cards in historical records are displayed with the reverted values; disabling the mod restores the original state.
+## 构建
 
-## 3\. Environment & Version
+前置：.NET 9 SDK、Godot 4.5.1（mono 版），以及安装了《杀戮尖塔 2》的本地目录。
 
-This mod does not depend on any base mod.
+1. 修改 `9.SRC/RevertSynchronize/RevertSynchronize.csproj` 中的本机路径：`Sts2Path`、`GodotPath`。
+2. 在 `9.SRC/RevertSynchronize/` 下执行 `build.ps1`。脚本依次执行：`dotnet build -c Debug -p:NuGetAudit=false` → Godot headless `--import` → `--export-pack "Windows Desktop"` → 拷贝 dll、pdb、json 到游戏 mods 目录。
 
-This mod supports the default 0.107.x branch and public beta 0.111.0 and above;
+工程引用游戏目录 `data_sts2_windows_x86_64` 下的 `sts2.dll` 与 `0Harmony.dll`，二者不打入产物。
 
-it disables itself automatically on v0.110.x, because the Synchronize card in that version is already the target effect and needs no modification.
+## 目录结构
 
-When the game starts, the mod checks the game version and whether the Synchronize card exists in the game package; it disables itself automatically if the version is unsupported or if the card has been removed or its shape no longer matches.
+```
+STS2Mod-回调同步/
+├── 1.ADR/           决策记录（ADR.md 索引）
+├── 2.PLANS/         施工计划（PLANS.md 索引）
+├── 3.DOCS/          知识与调研报告（DOCS.md 索引）
+├── 4.SDD/           软件设计文档（SDD.md 索引）
+├── 5.ChangeLog/     版本日志分片（ChangeLog.md 索引）
+├── 9.SRC/           源码（RevertSynchronize 工程）
+├── 10.OUTPUT/       构建产物与发布包（output.md 索引，内容不入库）
+├── PRIVACY/         机密信息（PRIVACY.md 索引，不入库）
+├── TMP/             临时与过程文件（TMP.md 索引，不入库）
+├── TOOLS/           自写脚本（TOOLS.md 索引）
+├── description/     创意工坊与发布文案（中/英）
+├── pics/            封面与截图素材
+└── languages/       16 语言官方原文存档
+```
 
-In theory, as long as there are no major API updates or card changes, this mod should automatically adapt to new versions without any modification.
+## 文档索引
 
-## 4\. Implementation & Compatibility
+| 目录 | 入口 | 内容 |
+|---|---|---|
+| `1.ADR/` | [ADR.md](1.ADR/ADR.md) | 补丁策略与放弃方案 |
+| `2.PLANS/` | [PLANS.md](2.PLANS/PLANS.md) | 施工计划与施工记录回填 |
+| `3.DOCS/` | [DOCS.md](3.DOCS/DOCS.md) | 三版本差异调研与维护清单 |
+| `4.SDD/` | [SDD.md](4.SDD/SDD.md) | 总体设计与模块划分 |
+| `5.ChangeLog/` | [ChangeLog.md](5.ChangeLog/ChangeLog.md) | 版本开发日志 |
+| `9.SRC/` | [README.md](9.SRC/RevertSynchronize/README.md) | 面向玩家的英文说明 |
 
-This mod is written with minimal dependencies, so under normal circumstances it is compatible with most mods and unlikely to break as the game version changes.
+## 版本
 
-This mod uses external patches to hard-code the card name, card text, play effect, keywords, and upgrade effect of Synchronize to their v0.110 versions, while the card art is not hard-coded.
+当前版本 `1.0`，与 `9.SRC/RevertSynchronize/RevertSynchronize.json` 的 `version` 字段一致。更新日志见 [CHANGELOG.md](CHANGELOG.md)。
 
-The mod works in the same way across all supported game versions.
+## 致谢
 
-However, compatibility is not guaranteed with pirated copies, modified versions, mobile versions, outdated versions, niche mods, or secondary mods.
+- 本 mod 使用 Deepseek Harness（WebUI）+ DeepSeek V4 Flash（0731，GA）完成，感谢梁圣。
+- 感谢《杀戮尖塔 2》制作组为方便玩家制作 mod 所做的努力。
+- 感谢 Baselib 制作者提供的文档。
 
-## 5\. Credits
+## 开源地址
 
-This mod was made with Deepseek Harness (WebUI) + DeepSeek V4 Flash (0731 GA). Thanks to Saint Liang.
-
-Thanks to the Slay the Spire 2 team for their efforts to make modding easier for players.
-
-Thanks to the Baselib developers for their documentation.
-
-## 6\. Open-Source Repository & Contact
-
-Open-source repository: https://github.com/Rim-World/STS2Mod-Revert-Synchronize
-
-Feel free to leave your comments and feedback in the comment section.
+<https://github.com/Rim-World/STS2Mod-Revert-Synchronize>

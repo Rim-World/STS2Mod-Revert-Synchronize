@@ -1,0 +1,4 @@
+{
+  "SYNCHRONIZE.title": "同步",
+  "SYNCHRONIZE.description": "在本回合你每擁有一種不同的充能球，就獲得 {CalculationExtra:diff()} 層[gold]集中[/gold]。{InCombat:\n（獲得 {CalculatedFocus:diff()} 層[gold]集中[/gold]）|}"
+}

@@ -1,0 +1,4 @@
+{
+  "SYNCHRONIZE.title": "동기화",
+  "SYNCHRONIZE.description": "영창된 구체의 종류\n하나당 이번 턴에\n[gold]밀집[/gold]을 {CalculationExtra:diff()} 얻습니다.{InCombat:\n([gold]밀집[/gold]을 {CalculatedFocus:diff()} 얻습니다)|}"
+}

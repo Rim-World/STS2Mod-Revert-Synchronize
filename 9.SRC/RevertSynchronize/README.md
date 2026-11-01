@@ -1,0 +1,55 @@
+English | [中文](README.zh.md)
+
+# If you like this mod, welcome to check out my other mods. They might be helpful to you.
+
+## 1\. Effects
+
+Adjusts the "Synchronize" card to its v0.110 effect: gain 2 Focus this turn for each unique Orb you have (1 Focus in v0.111, while the v0.107 version carries the Exhaust keyword instead).
+
+On upgrade: gain 3 Focus for each unique Orb you have (2 Focus in both v0.107 and v0.111).
+
+All other effects remain unchanged: 1 cost, Skill, does not Exhaust; card text is synced to the v0.110 version, and the card art is unchanged.
+
+This mod works by modifying the original "Synchronize" card directly, rather than creating a new card and disabling the old one.
+
+## 2\. Impact (Based on My Understanding of the Game)
+
+The v0.110 version of Synchronize is significantly stronger than all other versions and can become one of the core cards of the Defect class.
+
+This mod affects save files: while the mod is enabled, "Synchronize" cards in historical records are displayed with the reverted values; disabling the mod restores the original state.
+
+## 3\. Environment & Version
+
+This mod does not depend on any base mod.
+
+This mod supports the default 0.107.x branch and public beta 0.111.0 and above;
+
+it disables itself automatically on v0.110.x, because the Synchronize card in that version is already the target effect and needs no modification.
+
+When the game starts, the mod checks the game version and whether the Synchronize card exists in the game package; it disables itself automatically if the version is unsupported or if the card has been removed or its shape no longer matches.
+
+In theory, as long as there are no major API updates or card changes, this mod should automatically adapt to new versions without any modification.
+
+## 4\. Implementation & Compatibility
+
+This mod is written with minimal dependencies, so under normal circumstances it is compatible with most mods and unlikely to break as the game version changes.
+
+This mod uses external patches to hard-code the card name, card text, play effect, keywords, and upgrade effect of Synchronize to their v0.110 versions, while the card art is not hard-coded.
+
+The mod works in the same way across all supported game versions.
+
+However, compatibility is not guaranteed with pirated copies, modified versions, mobile versions, outdated versions, niche mods, or secondary mods.
+
+## 5\. Credits
+
+This mod was made with Deepseek Harness (WebUI) + DeepSeek V4 Flash (0731 GA). Thanks to Saint Liang.
+
+Thanks to the Slay the Spire 2 team for their efforts to make modding easier for players.
+
+Thanks to the Baselib developers for their documentation.
+
+## 6\. Open-Source Repository & Contact
+
+Open-source repository: https://github.com/Rim-World/STS2Mod-Revert-Synchronize
+
+Feel free to leave your comments and feedback in the comment section.

@@ -1,0 +1,4 @@
+{
+  "SYNCHRONIZE.title": "Sincronizzazione",
+  "SYNCHRONIZE.description": "In questo turno, ottieni {CalculationExtra:diff()} di [gold]Focus[/gold] per ogni Globo unico che possiedi.{InCombat:\n(Ottieni {CalculatedFocus:diff()} di [gold]Focus[/gold])|}"
+}

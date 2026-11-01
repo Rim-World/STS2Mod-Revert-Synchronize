@@ -1,0 +1,4 @@
+{
+  "SYNCHRONIZE.title": "Синхронизация",
+  "SYNCHRONIZE.description": "Дает {CalculationExtra:diff()} [gold]фокуса[/gold] на ход за каждую уникальную заряженную сферу.{InCombat:\n(Дает {CalculatedFocus:diff()} [gold]фокуса[/gold])|}"
+}
