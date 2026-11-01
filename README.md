@@ -67,7 +67,7 @@ STS2Mod-回调同步/
 
 ## 版本
 
-当前版本 `1.0`，与 `9.SRC/RevertSynchronize/RevertSynchronize.json` 的 `version` 字段一致。更新日志见 [CHANGELOG.md](CHANGELOG.md)。
+当前版本 `1.2`，与 `9.SRC/RevertSynchronize/RevertSynchronize.json` 的 `version` 字段一致。更新日志见 [CHANGELOG.md](CHANGELOG.md)。
 
 ## 致谢
 
