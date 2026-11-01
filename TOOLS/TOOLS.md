@@ -11,4 +11,5 @@
 ## 说明
 
 - 脚本内的 `languages/`、`src/RevertSynchronize/` 等路径以项目根为基准；目录整理后源码位于 `9.SRC/RevertSynchronize/`，`extract-synchronize-localization.py` 与 `gen-blank-icon.py` 的输出路径仍需按新目录调整后才能直接运行。
+- 当前仓库中的 `9.SRC/RevertSynchronize/RevertSynchronize/mod_image.png` 是 420×420 的 mod 封面，与 `pics/Synchronize_small.png` 字节相同，不是 `gen-blank-icon.py` 生成的全透明占位图；需要占位图时重新运行该脚本即可覆盖。
 - 未在本目录安装第三方工具；构建依赖的 .NET 9 SDK 与 Godot 4.5.1 为系统级安装，不在项目内。
