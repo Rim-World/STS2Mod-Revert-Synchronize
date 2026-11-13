@@ -55,16 +55,21 @@ public static class SynchronizeCanonicalKeywordsPatch
 }
 
 /// <summary>
-/// 107 特有：打出结果堆钉死 —— GetResultPileTypeForCardPlay() 返回 PileType。
+/// 107 特有：打出结果堆修正 —— GetResultPileTypeForCardPlay() 返回 PileType。
 /// 仅 107 存在该方法（110/111 为 GetResultLocationForCardPlay 返回 CardLocation，
 /// 由 GetKeywordsWithSources 过滤自动生效，不在此钉死以免引用 107 不存在的类型），
-/// 由 ModEntry 条件挂载。Postfix 强制「同步」打出后进弃牌堆。
+/// 由 ModEntry 条件挂载。
+///
+/// 只把原本的 Exhaust 改为 Discard：0.107 的 dupe 返回 PileType.None，
+/// 正常结算会 RemoveFromCombat；若无条件改成 Discard，HistoryCourse 自动打出的
+/// 同步 dupe 会留在弃牌堆，本次战斗内多一张同步。
 /// </summary>
 public static class SynchronizeResultPilePatch
 {
     public static void Postfix107(CardModel __instance, ref PileType __result)
     {
-        if (__instance is Synchronize && ModConfig.IsReplaceEnabled)
+        if (__instance is Synchronize && ModConfig.IsReplaceEnabled
+            && __result == PileType.Exhaust)
         {
             __result = PileType.Discard;
         }

@@ -12,6 +12,8 @@
 | 2026-11-01 19:53 | `02-发布包/RevertSynchronizeSourceCode.zip` | 1.0 | 150.6 KB | Release `v1.0` 资产：`9.SRC/RevertSynchronize/` 源码（排除 `.godot/`、`bin/`、`obj/`、dll/pck/pdb） |
 | 2026-11-01 20:51 | `02-发布包/RevertSynchronize.v1.2.zip` | 1.2 | 254.8 KB | Release `v1.2` 资产：重新构建的 dll/pck/json/pdb（已排除以 `.` 开头的项） |
 | 2026-11-01 20:51 | `02-发布包/RevertSynchronizeSourceCode.zip` | 1.2 | 150.6 KB | Release `v1.2` 资产：`9.SRC/RevertSynchronize/` 源码（排除 `.godot/`、`bin/`、`obj/`、dll/pck/pdb） |
+| 2026-11-13 09:18 | `01-构建产物/RevertSynchronize-1.2.1/` | 1.2.1 | 277 KB（dll 19,456 / pck 246,536 / json 511 / pdb 16,584 B） | 0.113 兼容修复构建：条件补丁与守卫改用 `Declared*`，逐补丁异常隔离；同时已覆盖安装到游戏 `mods/RevertSynchronize/`；SHA-256 `2c59c553…22d3d017`（DLL）、`dd1026d3…5efb1cf`（PCK） |
+| 2026-11-13 09:54 | `01-构建产物/RevertSynchronize-1.2.2/` | 1.2.2 | 277 KB（dll 19,456 / pck 246,536 / json 511 / pdb 16,584 B） | 0.107 ResultPile dupe 修复：仅 Exhaust → Discard，保留 `None`；独立子代理对抗审阅与验收 PASS；同时已覆盖安装到游戏 `mods/RevertSynchronize/`；SHA-256 `7b6c659d…07785a`（DLL）、`dd1026d3…5efb1cf`（PCK） |
 
 ## 分类说明
 

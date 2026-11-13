@@ -3,7 +3,7 @@
   "name": "回调同步（RevertSynchronize）",
   "author": "再玩小卡组找人弄你",
   "description": "将故障机器人的「同步」（Synchronize）整卡回调至 v0.110 效果：每种不同的充能球获得 2 点本回合集中（升级 3），不再消耗；v0.110.x 上不生效；支持 16 种语言。",
-  "version": "1.2",
+  "version": "1.2.2",
   "has_pck": true,
   "has_dll": true,
   "min_game_version": "0.107.0",

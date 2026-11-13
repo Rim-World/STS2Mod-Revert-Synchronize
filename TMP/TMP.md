@@ -8,6 +8,7 @@
 | 2026-11-01 | `02-缓存与临时/STS2Mod-Revert-Synchronize/` | 上述克隆的工作区快照，保留远端 `README.md`、`README.zh.md`、`LICENSE`、`.gitignore` 原件 | 源码文件 | 163 KB | 原 `.gitwork/STS2Mod-Revert-Synchronize/` |
 | 2026-11-01 | `02-缓存与临时/.buildtmp/` | .NET 构建分析器缓存 | 二进制缓存 | 117 KB | 项目根 `.buildtmp/` |
 | 2026-11-01 | `02-缓存与临时/旧根README-2026-11-01.md` | 整理前的根 `README.md` 存档，用于核对内容迁移 | Markdown | 767 B | 项目根 `README.md` |
+| 2026-11-13 | `03-运行日志/0.113-startup-1.2.2-20261113.log` | 1.2.2 启动加载、条件补丁状态与异常筛选 | 文本 | 约 1 KB | `%APPDATA%/SlayTheSpire2/logs/godot.log` |
 
 ## 分类说明
 

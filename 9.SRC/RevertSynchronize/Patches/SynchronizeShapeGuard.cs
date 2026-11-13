@@ -28,18 +28,18 @@ public static class SynchronizeShapeGuard
         try
         {
             _staticOk =
-                AccessTools.PropertyGetter(typeof(CardModel), "CanonicalEnergyCost") != null
-                && AccessTools.PropertyGetter(typeof(CardModel), "Type") != null
-                && AccessTools.PropertyGetter(typeof(CardModel), "TargetType") != null
-                && AccessTools.PropertyGetter(typeof(CardModel), "Rarity") != null
-                && AccessTools.Method(typeof(CardModel), "GetKeywordsWithSources") != null
-                && AccessTools.PropertyGetter(typeof(CardModel), "TitleLocString") != null
-                && AccessTools.PropertyGetter(typeof(CardModel), "Description") != null
-                && AccessTools.PropertyGetter(typeof(CardEnergyCost), "Canonical") != null
-                && AccessTools.PropertyGetter(typeof(Synchronize), "CanonicalVars") != null
-                && AccessTools.PropertyGetter(typeof(Synchronize), "ExtraHoverTips") != null
-                && AccessTools.Method(typeof(Synchronize), "OnPlay") != null
-                && AccessTools.Method(typeof(Synchronize), "OnUpgrade") != null;
+                AccessTools.DeclaredPropertyGetter(typeof(CardModel), "CanonicalEnergyCost") != null
+                && AccessTools.DeclaredPropertyGetter(typeof(CardModel), "Type") != null
+                && AccessTools.DeclaredPropertyGetter(typeof(CardModel), "TargetType") != null
+                && AccessTools.DeclaredPropertyGetter(typeof(CardModel), "Rarity") != null
+                && AccessTools.DeclaredMethod(typeof(CardModel), "GetKeywordsWithSources") != null
+                && AccessTools.DeclaredPropertyGetter(typeof(CardModel), "TitleLocString") != null
+                && AccessTools.DeclaredPropertyGetter(typeof(CardModel), "Description") != null
+                && AccessTools.DeclaredPropertyGetter(typeof(CardEnergyCost), "Canonical") != null
+                && AccessTools.DeclaredPropertyGetter(typeof(Synchronize), "CanonicalVars") != null
+                && AccessTools.DeclaredPropertyGetter(typeof(Synchronize), "ExtraHoverTips") != null
+                && AccessTools.DeclaredMethod(typeof(Synchronize), "OnPlay") != null
+                && AccessTools.DeclaredMethod(typeof(Synchronize), "OnUpgrade") != null;
         }
         catch
         {

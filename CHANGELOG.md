@@ -2,6 +2,23 @@
 
 本文件遵循 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/) 规范，版本号遵循语义化版本。
 
+## [1.2.2] - 2026-11-13
+
+### 修复
+
+- 0.107 持有 `HistoryCourse` 时，自动打出的同步 dupe 被 `ResultPile` 补丁强制送进弃牌堆，本次战斗内多一张同步。
+- `SynchronizeResultPilePatch.Postfix107` 改为只在原结果为 `PileType.Exhaust` 时改为 `PileType.Discard`；dupe 的 `PileType.None` 保留，正常从战斗中移除。
+- 清单版本 `1.2.1` → `1.2.2`。
+
+## [1.2.1] - 2026-11-13
+
+### 修复
+
+- 0.113 加载期 `ArgumentException`：107 专属 `CanonicalKeywords` 探测改用 `AccessTools.DeclaredPropertyGetter`，不再命中继承自 `CardModel` 的 getter。
+- `GetResultPileTypeForCardPlay` 探测与形状守卫统一改用 `Declared*`。
+- `PatchIfExists` 增加逐补丁异常隔离，单个目标失败不再中断后续补丁与汇总日志。
+- 清单版本 `1.2` → `1.2.1`。
+
 ## [1.2] - 2026-11-01
 
 ### 变更

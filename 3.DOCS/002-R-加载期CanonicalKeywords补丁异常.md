@@ -57,3 +57,20 @@ Harmony 2.4.2 在 `PatchProcessor.Patch()` 里检查 `original.IsDeclaredMember(
 - 已验证：0.113 实机日志复现；用真实 0.113 `sts2.dll` + `0Harmony 2.4.2` 反射复现，异常文案逐字一致；`DeclaredPropertyGetter(typeof(Synchronize), ...)` 返回 `null`。
 - 已验证：107 的 override `DeclaringType == ReflectedType`，可正常补丁；0.110 / 0.111 / 0.113 均无该 override。
 - 未验证：修复后的运行表现（未改代码）。
+
+
+## 修复结果（2026-11-13）
+
+- `ModEntry` 的 `CanonicalKeywords` 探测改用 `AccessTools.DeclaredPropertyGetter`；0.110+ 返回 `null`，按原意跳过。
+- `GetResultPileTypeForCardPlay` 探测改用 `AccessTools.DeclaredMethod`。
+- 形状守卫 12 项检查统一改用 `DeclaredPropertyGetter` / `DeclaredMethod`，与 `PatchAll` 的解析口径一致。
+- `PatchIfExists` 增加逐补丁 `try/catch`，记录目标成员、补丁类型、方法名与异常消息，不再中断后续条件补丁。
+- manifest 版本 `1.2` → `1.2.1`。
+- 已构建并覆盖安装到本地 `mods/RevertSynchronize`；0.113 启动日志显示两个条件补丁均按预期跳过，无 `ArgumentException`。107 实机待用户验收。
+
+
+## 后续修复：1.2.2 ResultPile dupe（2026-11-13）
+
+- 1.2.1 的 `SynchronizeResultPilePatch.Postfix107` 无条件把同步结果改为 `PileType.Discard`，连 dupe 的 `PileType.None` 也覆盖，导致 `HistoryCourse` 复制体滞留弃牌堆。
+- 1.2.2 只把 `PileType.Exhaust` 改为 `PileType.Discard`，保留 `None`，dupe 正常 `RemoveFromCombat`。
+- 独立子代理对照 0.107 源码做了对抗性审阅：`None`/`Exhaust`/`Discard`/Power/dupe/`ExhaustOnNextPlay` 分支均检查，结论 PASS；0.107 实机仍待用户验收。

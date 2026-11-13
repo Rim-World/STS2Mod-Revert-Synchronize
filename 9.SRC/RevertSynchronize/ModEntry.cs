@@ -36,14 +36,15 @@ public static class ModEntry
             // 1) 107 特有：Synchronize.CanonicalKeywords override（返回 [Exhaust]）→ 源头清空。
             //    110/111 无此成员（继承基类），自动跳过。
             bool hasCanonicalKeywords = PatchIfExists(
-                AccessTools.PropertyGetter(typeof(Synchronize), "CanonicalKeywords"),
+                AccessTools.DeclaredPropertyGetter(typeof(Synchronize), "CanonicalKeywords"),
                 typeof(SynchronizeCanonicalKeywordsPatch), nameof(SynchronizeCanonicalKeywordsPatch.Postfix));
 
-            // 2) 107 特有：GetResultPileTypeForCardPlay() → 打出结果钉死为弃牌堆。
+            // 2) 107 特有：GetResultPileTypeForCardPlay() → 只把 Exhaust 改为弃牌堆。
+            //    dupe 的 PileType.None 保留，正常 RemoveFromCombat，避免 HistoryCourse 复制体滞留。
             //    110/111 为 GetResultLocationForCardPlay()（返回 CardLocation），
-            //    由 GetKeywordsWithSources 过滤自动生效，无需钉死。
+            //    由 GetKeywordsWithSources 过滤自动生效，无需改写。
             bool hasResultPile = PatchIfExists(
-                AccessTools.Method(typeof(CardModel), "GetResultPileTypeForCardPlay"),
+                AccessTools.DeclaredMethod(typeof(CardModel), "GetResultPileTypeForCardPlay"),
                 typeof(SynchronizeResultPilePatch), nameof(SynchronizeResultPilePatch.Postfix107));
 
             Log.Info($"{ModId}: Harmony patches applied (Synchronize -> v0.110 behavior); " +
@@ -62,7 +63,16 @@ public static class ModEntry
             return false;
         }
 
-        _harmony!.Patch(target, postfix: new HarmonyMethod(patchType, postfixMethodName));
-        return true;
+        try
+        {
+            _harmony!.Patch(target, postfix: new HarmonyMethod(patchType, postfixMethodName));
+            return true;
+        }
+        catch (Exception e)
+        {
+            Log.Error($"{ModId}: failed to patch {target.DeclaringType?.FullName}.{target.Name} " +
+                      $"with {patchType.FullName}.{postfixMethodName}: {e}");
+            return false;
+        }
     }
 }
