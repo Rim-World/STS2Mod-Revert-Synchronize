@@ -23,3 +23,6 @@
 产物时间取自文件修改时间；版本号取自 `9.SRC/RevertSynchronize/RevertSynchronize.json` 的 `version` 字段。
 
 重建前的已安装版本备份在 `03-备份/重建前安装-20261101/`（dll/pck/json/pdb，版本 1.0）。
+| 2026-11-13 10:21 | `02-发布包/RevertSynchronize.v1.2.2.zip` | 1.2.2 | 255 KB（261,149 B） | GitHub Release v1.2.2 安装包；dll + pck + json + pdb |
+| 2026-11-13 10:21 | `02-发布包/RevertSynchronizeSourceCode.v1.2.2.zip` | 1.2.2 | 151 KB（154,526 B） | v1.2.2 源码包；排除 `.godot/`、`bin/`、`obj/` 与二进制产物 |
+| 2026-11-13 10:21 | GitHub Release `v1.2.2` | 1.2.2 | 两个资产 | <https://github.com/Rim-World/STS2Mod-Revert-Synchronize/releases/tag/v1.2.2> |
